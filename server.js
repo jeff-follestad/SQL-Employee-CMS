@@ -1,16 +1,15 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
-require('console.table');
+const cTable = require('console.table');
 
 const promptMessages = {
-  viewAllEmployees: "View All Employees",
-  viewByDepartment: "View All Employees By Department",
-  viewByManager: "View All Employees By Manager",
-  addEmployee: "Add An Employee",
-  removeEmployee: "Remove An Employee",
-  updateRole: "Update Employee Role",
-  updateEmployeeManager: "Update Employee Manager",
+  viewAllDepartments: "View All Departments",
   viewAllRoles: "View All Roles",
+  viewAllEmployees: "View All Employees",
+  addDepartment: "Add a Department",
+  addRole: "Add a Role",
+  addEmployee: "Add an Employee",
+  updateEmployeeManager: "Update Employee Record",
   exit: "Exit"
 };
 

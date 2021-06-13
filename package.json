@@ -5,7 +5,8 @@
     "mysql2": "^2.2.5"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "jest"
   },
   "name": "sql-employee-cms",
   "description": "*A command-line CMS application that accepts user input and includes the following functionality*:",
