@@ -3,5 +3,23 @@
     "console.table": "^0.10.0",
     "inquirer": "^8.1.0",
     "mysql2": "^2.2.5"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "sql-employee-cms",
+  "description": "*A command-line CMS application that accepts user input and includes the following functionality*:",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeff-follestad/SQL-Employee-CMS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeff-follestad/SQL-Employee-CMS/issues"
+  },
+  "homepage": "https://github.com/jeff-follestad/SQL-Employee-CMS#readme"
 }
