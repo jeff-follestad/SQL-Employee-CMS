@@ -1,4 +1,5 @@
 module.exports = {
+
   firstPrompt: {
 		type: "list",
 		name: "task",
@@ -27,7 +28,7 @@ module.exports = {
 		{
 			type: "list",
 			name: "managerId",
-			message: "Choose a manager",
+			message: "Choose a manager:",
 			choices: managerChoices,
 		},
 	],
@@ -37,7 +38,7 @@ module.exports = {
 		{
 			type: "list",
 			name: "departmentId",
-			message: "Which department will you choose?",
+			message: "Select a department:",
 			choices: departmentChoices,
 		},
 	],
@@ -49,31 +50,31 @@ module.exports = {
 			type: "input",
 			message: "Please enter the employee's first name:",
 		},
-		//Employee"s Last Name
+		//Employee's Last Name
 		{
 			name: "lastName",
 			type: "input",
 			message: "Now enter the employee's last name:",
 		},
-		//Employee"s Department
+		//Employee's Department
 		{
 			name: "department",
 			type: "list",
 			message: "Select the employee's department:",
 			choices: departmentArray,
 		},
-		//Employee"s Role
+		//Employee's Role
 		{
 			name: "role",
 			type: "list",
 			message: "What is the employee's job position?",
 			choices: roleArray,
 		},
-		// Select Employee"s Manager
+		// Select Employee's Manager
 		{
 			name: "manager",
 			type: "list",
-			message: "Select the employee's manager.",
+			message: "Select the employee's manager:",
 			choices: managerArray,
 		},
 	],
@@ -97,7 +98,7 @@ module.exports = {
 		{
 			type: "input",
 			name: "roleSalary",
-			message: "Role Salary",
+			message: "Role Salary?",
 		},
 		// Select New Role;s Department
 		{
@@ -121,7 +122,7 @@ module.exports = {
 		{
 			name: "role",
 			type: "list",
-			message: "Choose employee's job position",
+			message: "Choose employee's job position:",
 			choices: job,
 		},
 	],
@@ -139,7 +140,7 @@ module.exports = {
 		{
 			name: "manager",
 			type: "list",
-			message: "Choose employee's new manager",
+			message: "Choose employee's new manager:",
 			choices: employees,
 		},
 	],
