@@ -1,92 +1,10 @@
-const mysql = require('mysql2');
-const inquirer = require('inquirer');
-const cTable = require('console.table');
-
-// Connect to database
-const db = mysql.createConnection(
-  {
-    port: 3306,
-    host: 'localhost',
-    // Your MySQL username,
-    user: 'root',
-    // Your MySQL password
-    password: 'Oakland2020!!',
-    database: 'employees'
-  },
-  console.log('Connected to the employees database.')
-);
-
-connection.connect(function (err) {
-	if (err) throw err;
-});
-
-const promptMessages = {
-    viewAllDepartments: "View All Departments",
-    viewAllRoles: "View All Roles",
-    viewAllEmployees: "View All Employees",
-    addDepartment: "Add a Department",
-    addRole: "Add a Role",
-    addEmployee: "Add an Employee",
-    updateEmployeeManager: "Update Employee Record",
-    exit: "Exit"
-  };
-
-function prompt() {
-  inquirer
-      .prompt({
-          name: 'action',
-          type: 'list',
-          message: 'Please select and action: ',
-          choices: [
-              promptMessages.viewAllDepartments,
-              promptMessages.viewAllRoles,
-              promptMessages.viewAllEmployees,
-              promptMessages.addDepartment,
-              promptMessages.addRole,
-              promptMessages.addEmployee,
-              promptMessages.updateEmployee,
-              promptMessages.exit
-          ]
-      })
-
-      .then(answer => {
-        console.log('answer', answer);
-        switch (answer.action) {
-            case promptMessages.viewAllDepartments:
-                viewAllEmployees();
-                break;
-
-            case promptMessages.viewAllRoles:
-                viewByDepartment();
-                break;
-
-            case promptMessages.viewAllEmployees:
-                viewByManager();
-                break;
-
-            case promptMessages.addDepartment:
-                addEmployee();
-                break;
-
-            case promptMessages.addRole:
-                remove('delete');
-                break;
-
-            case promptMessages.addEmployee:
-                remove('role');
-                break;
-
-            case promptMessages.updateEmployee:
-                viewAllRoles();
-                break;
-
-            case promptMessages.exit:
-                connection.end();
-                break;
-        }
-    });
-}
-
+const inquirer = require("inquirer");
+const table = require("console.table");
+// MySQL Connection
+const connection = require("./config/connection");
+// Prompts
+const prompt = require("./config/prompts");
+require("console.table");
 
 function viewAllDepartments() {
   const query = `SELECT * FROM department

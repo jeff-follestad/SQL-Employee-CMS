@@ -4,45 +4,34 @@ module.exports = {
 		name: "task",
 		message: "Make a selection:",
 		choices: [
-			/* === || VIEW || === */
-			"View Employees", // viewEmployee();
-			"View Employees by Manager", // viewEmployeeByManager();
-			"View Employees by Department", // viewEmployeeByDepartment();
-			"View Departments", // viewDepartments();
-			"View Roles", // viewRoles();
-			"View Department Budget", // viewDepartmentBudget();
-			/* === || ADD || === */
-			"Add Employee", // addEmployee();
-			"Add Department", // addDepartment();
-			"Add Role", // addRole();
-			/* === || UPDATE || === */
-			"Update Employee Role", // updateEmployeeRole();
-			"Update Employee Manager", // updateEmployeeManager();
-			/* === || REMOVE || === */
-			"Remove Employee", // removeEmployees();
-			"Remove Department", // removeDepartment();
-			"Remove Role", // removeRole();
-			/* === || EXIT || === */
+			"View Employees", 
+			"View Employees by Manager", 
+			"View Employees by Department", 
+			"View Departments",
+			"View Roles",
+			"View Department Budget",
+			"Add Employee",
+			"Add Department",
+			"Add Role",
+			"Update Employee Role",
+			"Update Employee Manager",
+			"Remove Employee",
+			"Remove Department",
+			"Remove Role",
 			"Exit",
 		],
 	},
 
-	// === ╔═════════════════╗ ===
-	// === ║ VIEW BY PROMPTS ║ ===
-	// === ╚═════════════════╝ ===
-
-	/* === || PROMPT EMPLOYEE BY MANAGER || === */
 	viewManagerPrompt: (managerChoices) => [
 		// Select Manager
 		{
 			type: "list",
 			name: "managerId",
-			message: "Which manager will you choose?",
+			message: "Choose a manager",
 			choices: managerChoices,
 		},
 	],
 
-	/* === || PROMPT VIEW EMPLOYEE BY DEPARTMENT || === */
 	departmentPrompt: (departmentChoices) => [
 		// Select Department
 		{
@@ -53,70 +42,64 @@ module.exports = {
 		},
 	],
 
-	// === ╔═════════════╗ ===
-	// === ║ ADD PROMPTS ║ ===
-	// === ╚═════════════╝ ===
-
-	/* === || PROMPT ADD EMPLOYEE || === */
 	insertEmployee: (departmentArray, roleArray, managerArray) => [
-		// Create Employee's First Name
+		//Employee's First Name
 		{
 			name: "firstName",
 			type: "input",
-			message: "Enter employee's first name:",
+			message: "Please enter the employee's first name:",
 		},
-		// Create Employee's Last Name
+		//Employee"s Last Name
 		{
 			name: "lastName",
 			type: "input",
-			message: "Enter employee's last name:",
+			message: "Now enter the employee's last name:",
 		},
-		// Select Employee's Department
+		//Employee"s Department
 		{
 			name: "department",
 			type: "list",
-			message: "Choose employee's department",
+			message: "Select the employee's department:",
 			choices: departmentArray,
 		},
-		// Select Employee's Role
+		//Employee"s Role
 		{
 			name: "role",
 			type: "list",
-			message: "Choose employee's job position",
+			message: "What is the employee's job position?",
 			choices: roleArray,
 		},
-		// Select Employee's Manager
+		// Select Employee"s Manager
 		{
 			name: "manager",
 			type: "list",
-			message: "Choose the manager of this employee:",
+			message: "Select the employee's manager.",
 			choices: managerArray,
 		},
 	],
 
-	/* === || PROMPT ADD DEPARTMENT || === */
+
 	insertDepartment: {
-		// Create New Departments Name
+		// Create Department Name
 		name: "department",
 		type: "input",
 		message: "What is the name of the new department?",
 	},
 
-	/* === || PROMPT ADD ROLE || === */
 	insertRole: (departmentChoices) => [
-		// Create New Role's Name
+		// Create New Role"s Name
 		{
 			type: "input",
 			name: "roleTitle",
-			message: "Role title?",
+			message: "What is the role's title?",
 		},
-		// Create New Role's Salary Budget
+		// Create New Role's Salary 
 		{
 			type: "input",
 			name: "roleSalary",
 			message: "Role Salary",
 		},
-		// Select New Role's Department
+		// Select New Role;s Department
 		{
 			type: "list",
 			name: "departmentId",
@@ -125,20 +108,16 @@ module.exports = {
 		},
 	],
 
-	// === ╔════════════════╗ ===
-	// === ║ UPDATE PROMPTS ║ ===
-	// === ╚════════════════╝ ===
 
-	/* === || PROMPT UPDATE ROLE || === */
 	updateRole: (employees, job) => [
 		// Select Employee to Update
 		{
 			name: "update",
 			type: "list",
-			message: "Choose the employee whose role is to be updated:",
+			message: "Choose the employee to be updated:",
 			choices: employees,
 		},
-		// Select Employee's New Role
+		// Select Employee;s New Role
 		{
 			name: "role",
 			type: "list",
@@ -147,7 +126,7 @@ module.exports = {
 		},
 	],
 
-	/* === || PROMPT UPDATE MANAGER || === */
+
 	updateManager: (employees) => [
 		// Select Employee to Update
 		{
@@ -156,7 +135,7 @@ module.exports = {
 			message: "Choose the employee whose manager is to be updated:",
 			choices: employees,
 		},
-		// Select Employee's New Manager
+		// Select Employee"s New Manager
 		{
 			name: "manager",
 			type: "list",
@@ -165,11 +144,7 @@ module.exports = {
 		},
 	],
 
-	// === ╔════════════════╗ ===
-	// === ║ REMOVE PROMPTS ║ ===
-	// === ╚════════════════╝ ===
 
-	/* === || PROMPT REMOVE EMPLOYEE || === */
 	deleteEmployeePrompt: (deleteEmployeeChoices) => [
 		// Select Employee to Remove
 		{
@@ -180,7 +155,6 @@ module.exports = {
 		},
 	],
 
-	/* === || PROMPT REMOVE DEPARTMENT || === */
 	deleteDepartmentPrompt: (deleteDepartmentChoices) => [
 		// Select Department to Remove
 		{
@@ -191,7 +165,6 @@ module.exports = {
 		},
 	],
 
-	/* === || PROMPT REMOVE ROLE || === */
 	deleteRolePrompt: (deleteRoleChoices) => [
 		// Select Role to Remove
 		{

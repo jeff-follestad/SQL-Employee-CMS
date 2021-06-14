@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const mysql = require('mysql2');
 var connection = mysql.createConnection({
 	// Connection
 	host: "localhost",
@@ -8,7 +8,6 @@ var connection = mysql.createConnection({
 	database: "employees",
 });
 
-// connect to the mysql server and database
 connection.connect(function (err) {
 	if (err) throw err;
 });
