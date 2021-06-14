@@ -9,13 +9,14 @@ const connection = mysql.createConnection({
 	port: 3306,
 	user: "root",
 	password: "Oakland2020!!",
-	database: "employeetrackerDB",
+	database: "employeetrackerDB"
 });
 
-connection.connect(function (err) {
-	if (err) throw err;
+connection.connect(function(err) {
+  if (err) throw err
+  console.log("Connected as Id" + connection.threadId)
+  startPrompt();
 });
-
 
 function startPrompt() {
     inquirer.prompt([
