@@ -1,7 +1,6 @@
 const inquirer = require("inquirer")
 const mysql = require("mysql2")
 const cTable = require('console.table')
-const prompt = require("./config/prompts.js");
 
 
 const connection = mysql.createConnection({
@@ -15,40 +14,39 @@ const connection = mysql.createConnection({
 
 connection.connect(function (err) {
 	if (err) throw err;
-	startPrompt();
 });
 
-/================== Initial Prompt =======================//
+
 function startPrompt() {
     inquirer.prompt([
     {
     type: "list",
-    message: "What would you like to do?",
+    message: "Please select an action:",
     name: "choice",
     choices: [
-              "View All Employees?", 
-              "View All Employee's By Roles?",
-              "View all Emplyees By Deparments", 
+              "View All Employees", 
+              "View All Employees By Role",
+              "View all Employees By Department", 
               "Update Employee",
-              "Add Employee?",
-              "Add Role?",
-              "Add Department?"
+              "Add Employee",
+              "Add Role",
+              "Add Department"
             ]
     }
 ]).then(function(val) {
         switch (val.choice) {
-            case "View All Employees?":
+            case "View All Employees":
               viewAllEmployees();
             break;
     
-          case "View All Employee's By Roles?":
+          case "View All Employees By Role":
               viewAllRoles();
             break;
-          case "View all Emplyees By Deparments":
+          case "View all Employees By Deparment":
               viewAllDepartments();
             break;
           
-          case "Add Employee?":
+          case "Add Employee":
                 addEmployee();
               break;
 
@@ -56,11 +54,11 @@ function startPrompt() {
                 updateEmployee();
               break;
       
-            case "Add Role?":
+            case "Add Role":
                 addRole();
               break;
       
-            case "Add Department?":
+            case "Add Department":
                 addDepartment();
               break;
     
