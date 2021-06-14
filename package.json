@@ -11,9 +11,6 @@
   "description": "*A command-line CMS application that accepts user input and includes the following functionality*:",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {
-    "jest": "^27.0.4"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jeff-follestad/SQL-Employee-CMS.git"
