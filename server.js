@@ -1,9 +1,9 @@
 const inquirer = require("inquirer");
 const table = require("console.table");
 // MySQL Connection
-const connection = require("./config/connection");
+const connection = require("./config/connection.js");
 // Prompts
-const prompt = require("./config/prompts");
+const prompt = require("./config/prompts.js");
 require("console.table");
 
 function firstPrompt() {
