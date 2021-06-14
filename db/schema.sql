@@ -85,3 +85,5 @@ INSERT INTO employee (first_name, last_name, manager_id, role_id) VALUE ("Mike",
 SELECT * FROM department;
 SELECT * FROM role;
 SELECT * FROM employee;
+
+--the end--
