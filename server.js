@@ -5,7 +5,7 @@ const cTable = require('console.table');
 // Connect to database
 const db = mysql.createConnection(
   {
-    port: 3001,
+    port: 3306,
     host: 'localhost',
     // Your MySQL username,
     user: 'root',
@@ -16,15 +16,11 @@ const db = mysql.createConnection(
   console.log('Connected to the employees database.')
 );
 
-db.connect(err => {
-    if (err) throw err;
-    console.log('Database connected.');
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
-  });
+connection.connect(function (err) {
+	if (err) throw err;
+});
 
-  const promptMessages = {
+const promptMessages = {
     viewAllDepartments: "View All Departments",
     viewAllRoles: "View All Roles",
     viewAllEmployees: "View All Employees",
